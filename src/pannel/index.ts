@@ -9,7 +9,13 @@ export class PostFormPanel {
         );
     }
     createPanel() {
-        const panel = vscode.window.createWebviewPanel("DEM_PANEL_VIEW", "测试pannel", vscode.ViewColumn.One, {})
+        const panel = vscode.window.createWebviewPanel("DEM_PANEL_VIEW", "测试pannel", vscode.ViewColumn.One, {
+            // 在webview中启用脚本
+            enableScripts: true,
+            localResourceRoots:[],// 禁止加载外部资源
+            retainContextWhenHidden: true, // 隐藏时保留面板内容
+
+        });
         panel.webview.html = this.getHTML();
     }
 
