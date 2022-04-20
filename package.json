@@ -14,6 +14,7 @@
 		"onCommand:dem.version",
 		"onCommand:dem.menuRevel",
 		"onCommand:dem.menuChangeTitle",
+		"onCommand:dem.webviewPanel.postForm",
 		"onCommand:dem.helloWorld"
 	],
 	"main": "./dist/extension.js",
@@ -35,6 +36,11 @@
 			{
 				"command": "dem.menuChangeTitle",
 				"title": "Dem ChangeTitle"
+			},
+			{
+				"command": "dem.webviewPanel.postForm",
+				"title": "Dem Start New PostForm Tool",
+				"category": "Dem Tools"
 			}
 		],
 		"viewsContainers": {

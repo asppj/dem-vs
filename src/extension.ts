@@ -1,6 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import { PostFormPanel } from './pannel';
 import VersionMessage from './Version/version';
 import { DemMenuView } from './View/tool';
 
@@ -26,6 +27,7 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(vscode.commands.registerCommand(versionIns.commandName(),
 		versionIns.show));
 	new DemMenuView(context);
+	new PostFormPanel(context);
 }
 
 // this method is called when your extension is deactivated
