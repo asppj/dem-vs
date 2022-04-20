@@ -1,5 +1,5 @@
 {
-  "name": "dem",
+	"name": "dem",
 	"displayName": "dem",
 	"description": "效率工具",
 	"version": "0.0.1",
@@ -10,7 +10,11 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:dem.helloWorld"
+		"onView:dem.menuView",
+		"onCommand:dem.version",
+		"onCommand:dem.menuRevel",
+		"onCommand:dem.menuChangeTitle",
+		"onCommand:dem.helloWorld"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -22,8 +26,71 @@
 			{
 				"command": "dem.version",
 				"title": "Dem Version"
+			},
+			{
+				"command": "dem.menuRevel",
+				"title": "Dem Menu Revel",
+				"icon": "public/d.svg"
+			},
+			{
+				"command": "dem.menuChangeTitle",
+				"title": "Dem ChangeTitle"
 			}
-		]
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "dem",
+					"title": "Dem",
+					"icon": "public/d.svg"
+				}
+			]
+		},
+		"views": {
+			"dem": [
+				{
+					"id": "dem.menuView",
+					"name": "Dem",
+					"icon": "public/d.svg"
+				},
+				{
+					"id": "dem.menuRevel",
+					"name": "revel",
+					"contextualTitle": "123"
+				},
+				{
+					"id": "dem.menuChangeTitle",
+					"name": "changeTitle",
+					"contextualTitle": "456"
+				}
+			]
+		},
+		"menus": {
+			"view/title": [
+				{
+					"command": "dem.menuRevel",
+					"when": "view == dem.menuRevel",
+					"group": "navigation"
+				},
+				{
+					"command": "dem.menuChangeTitle",
+					"when": "view == dem.menuChangeTitle",
+					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "dem.menuRevel",
+					"when": "view == dem.menuRevel && viewItem== dependency",
+					"group": "inline"
+				},
+				{
+					"command": "dem.menuChangeTitle",
+					"when": "view == dem.menuChangeTitle && viewItem== dependency",
+					"group": "inline"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run package",

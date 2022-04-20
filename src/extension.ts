@@ -2,6 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import VersionMessage from './Version/version';
+import { DemMenuView } from './View/tool';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -24,6 +25,7 @@ export function activate(context: vscode.ExtensionContext) {
 	const versionIns = new VersionMessage();
 	context.subscriptions.push(vscode.commands.registerCommand(versionIns.commandName(),
 		versionIns.show));
+	new DemMenuView(context);
 }
 
 // this method is called when your extension is deactivated
