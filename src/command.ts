@@ -1,0 +1,1 @@
+export const DEM_VERSION="dem.version";
