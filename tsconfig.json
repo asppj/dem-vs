@@ -12,7 +12,7 @@
 		"paths" : {
 			"*": ["*"],
 		},
-		"strict": false,   /* enable all strict type-checking options */
+		"strict": true,   /* enable all strict type-checking options */
 		"jsx": "react-jsx",
 		"noUnusedParameters": false,  /* Report errors on unused parameters. */
 		"noEmitHelpers": true,
