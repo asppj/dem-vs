@@ -1,7 +1,7 @@
 
 import * as vscode from 'vscode';
 
-import { DEM_VERSION } from '../command';
+import { DEM_VERSION } from '../constant';
 
 const version = `0.1.0`;
 const short = `dem-vs`;

@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { DEM_MENU_CHANGE_TITLE, DEM_MENU_REVEL, DEM_MENU_VIEW } from '../command';
+import { DEM_MENU_CHANGE_TITLE, DEM_MENU_REVEL, DEM_MENU_VIEW } from '../constant';
 
 export class DemMenuView {
 

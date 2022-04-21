@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { DEM_POST_FORM_PANEL_VIEW } from '../command';
+import { DEM_POST_FORM_PANEL_VIEW } from '../constant';
 
 
 export class PostFormPanel {

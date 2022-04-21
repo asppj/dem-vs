@@ -1,7 +1,9 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import { EXTENSION_CONSTANT } from './constant';
 import { PostFormPanel } from './pannel';
+import { LeftPanelWebview } from './providers/left-webview-provider';
 import VersionMessage from './Version/version';
 import { DemMenuView } from './View/tool';
 
@@ -28,6 +30,13 @@ export function activate(context: vscode.ExtensionContext) {
 		versionIns.show));
 	new DemMenuView(context);
 	new PostFormPanel(context);
+	// Register view
+	const leftPanelWebViewProvider = new LeftPanelWebview(context?.extensionUri, {});
+	let view = vscode.window.registerWebviewViewProvider(
+		EXTENSION_CONSTANT.LEFT_PANEL_WEBVIEW_ID,
+		leftPanelWebViewProvider,
+	);
+	context.subscriptions.push(view);
 }
 
 // this method is called when your extension is deactivated

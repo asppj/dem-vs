@@ -11,6 +11,7 @@
 	],
 	"activationEvents": [
 		"onView:dem.menuView",
+		"onView:dem.left-panel-webview",
 		"onCommand:dem.version",
 		"onCommand:dem.menuRevel",
 		"onCommand:dem.menuChangeTitle",
@@ -68,6 +69,12 @@
 					"id": "dem.menuChangeTitle",
 					"name": "changeTitle",
 					"contextualTitle": "456"
+				},
+				{
+					"type": "webview",
+					"id": "dem.left-panel-webview",
+					"name": "webviewPanel",
+					"icon": "public/d.svg"
 				}
 			]
 		},
@@ -110,19 +117,31 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.66.0",
 		"@types/glob": "^7.2.0",
 		"@types/mocha": "^9.1.0",
 		"@types/node": "14.x",
+		"@types/vscode": "^1.66.0",
 		"@typescript-eslint/eslint-plugin": "^5.16.0",
 		"@typescript-eslint/parser": "^5.16.0",
+		"@vscode/test-electron": "^2.1.3",
 		"eslint": "^8.11.0",
 		"glob": "^7.2.0",
 		"mocha": "^9.2.2",
-		"typescript": "^4.5.5",
 		"ts-loader": "^9.2.8",
+		"typescript": "^4.5.5",
 		"webpack": "^5.70.0",
-		"webpack-cli": "^4.9.2",
-		"@vscode/test-electron": "^2.1.3"
+		"webpack-cli": "^4.9.2"
+	},
+	"dependencies": {
+		"@types/react": "^18.0.5",
+		"@types/react-dom": "^18.0.1",
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0"
+	},
+	"_moduleAliases": {
+		"utils": "dist/utils",
+		"providers": "dist/providers",
+		"components": "dist/components",
+		"constant": "dist/constant.js"
 	}
 }
